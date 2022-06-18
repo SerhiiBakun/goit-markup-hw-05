@@ -169,6 +169,7 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
+  transform: translateY(1px);
 
   content: '';
   width: 100%;
@@ -622,6 +623,14 @@ color: rgba(255, 255, 255, 0.6);
   background-color: var(--primary-bcg-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  color: #000000;
+
+  transition: color var(--time-duration) var(--time-function),
+  border-color var(--time-duration) var(--time-function);
+}
+
+.modal-close {
+  fill: currentColor;
 }
 
 .backdrop.is-hidden .modal {
@@ -636,6 +645,12 @@ color: rgba(255, 255, 255, 0.6);
 
 .no-scroll {
   overflow: hidden;
+}
+
+.btn-modal:hover,
+.btn-modal:focus {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 
@@ -693,7 +708,10 @@ overflow: hidden;
   height: 100%;
   top: 0;
   left: 0;
-  padding: 63px 24px;
+  padding-right: 24px;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
   
   transform: translateY(100%);
   transition: transform var(--time-duration) var(--time-function);
